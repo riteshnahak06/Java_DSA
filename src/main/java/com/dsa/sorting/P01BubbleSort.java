@@ -12,7 +12,7 @@ public class P01BubbleSort {
 
     private static void bubbleSortAsc(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
-            for (int j=0;j<arr.length-i-1;j++){
+            for (int j=0;j<arr.length-i-1;j++){ //-i because max value is pushed to last of thr array in each iteration so no need to check these
                 if (arr[j]<arr[j+1]){ // change this condition for ascending
                     swapVal(arr,j,j+1);
                 }
