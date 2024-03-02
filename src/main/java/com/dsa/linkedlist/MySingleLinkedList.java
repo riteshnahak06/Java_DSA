@@ -43,6 +43,14 @@ public class MySingleLinkedList {
             currentNode=currentNode.next;
         }
     }
+    boolean search(int data){
+        Node currNode=head;
+        while (currNode!=null){
+            if (currNode.data==data) return true;
+            currNode=currNode.next;
+        }
+        return false;
+    }
     public int getSize() {
         return this.size;
     }
@@ -57,5 +65,6 @@ class Test{
         linkedList.addLast(44);
         linkedList.printList();
         System.out.println(linkedList.getSize());
+        System.out.println(linkedList.search(44));
     }
 }
