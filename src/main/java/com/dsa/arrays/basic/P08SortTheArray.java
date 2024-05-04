@@ -8,6 +8,9 @@ public class P08SortTheArray {
         sortAsc(arr);
         System.out.println(Arrays.toString(arr));
     }
+    static void sortArr(int [] arr){
+
+    }
 
     private static void sortAsc(int[] arr) {
         int n=arr.length-1;
