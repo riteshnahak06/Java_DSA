@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class P14NthMaxAndNthMinOfArray {
     public static void main(String[] args) {
         int[] arr = {10, 12, 86, 44, 21, 36};
-        int[] result = maxAndMin(arr, 5);
+        int[] result = maxAndMin(arr, 2);
         System.out.println(Arrays.toString(result));
     }
 
