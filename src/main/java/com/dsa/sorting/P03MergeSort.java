@@ -14,22 +14,23 @@ public class P03MergeSort {
         System.out.println(Arrays.toString(res));
     }
 
-    static int [] mergeSort(int [] arr){
+    private static int[] mergeSort(int[] arr) {
+        //base condition
         if (arr.length==1){
             return arr;
         }
-        int mid=arr.length/2;
+        int mid= arr.length/2;
+
         int [] left=mergeSort(Arrays.copyOfRange(arr,0,mid));
         int [] right=mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
-
-        return merger(left,right);
+        return merge(left,right);
     }
 
-    private static int[] merger(int[] first, int[] second) {
-        int[] mix=new int[first.length+second.length];
-        int i=0;
-        int j=0;
-        int k=0;
+    private static int [] merge(int[] first, int[] second) {
+        int[] mix= new int[first.length+second.length];
+        //take pointer for each array
+        int i=0;int j=0;
+        int k=0; //pointer for mix
         while (i<first.length && j<second.length){
             if (first[i]<second[j]){
                 mix[k]=first[i];
@@ -38,9 +39,10 @@ public class P03MergeSort {
                 mix[k]=second[j];
                 j++;
             }
-        k++;
+            //increment mix index
+            k++;
         }
-        //may be one arr is not complete and other is completed
+        //sometime if one array complete then put the remain value in mix array as it is
         while (i<first.length){
             mix[k]=first[i];
             i++;
@@ -53,5 +55,4 @@ public class P03MergeSort {
         }
         return mix;
     }
-
 }
